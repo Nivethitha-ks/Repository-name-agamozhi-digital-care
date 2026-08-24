@@ -19,7 +19,7 @@
 ## 🛠️ Complete Verification & Audit Matrix
 
 ### 1. Public Website & Routing (100% Complete)
-- [x] **8 Public Routes**: `/`, `/services`, `/packages`, `/projects`, `/why-us`, `/how-it-works`, `/industries`, `/contact`.
+- [x] **Public Routes**: `/`, `/about`, `/services`, `/packages`, `/projects`, `/why-us`, `/how-it-works`, `/resources`, `/contact`.
 - [x] **404 Error Page**: Dedicated, branded [`NotFound.jsx`](src/pages/NotFound.jsx) page.
 - [x] **Homepage (13 Sections)**: Clean layout, real Google Maps location embed, live enquiry form.
 - [x] **Real Client Project**: Sri Bhavani Automation (`https://www.sbautomation.in/`) opening with `target="_blank" rel="noopener noreferrer"`.
