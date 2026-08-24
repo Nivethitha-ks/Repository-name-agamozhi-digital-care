@@ -175,21 +175,13 @@ const Home = () => {
 
               {/* Subheadline — Crisp White Text */}
               <p className="text-white text-sm sm:text-base md:text-xl w-full max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium break-words">
-                Get found online, build customer trust, and grow your business with a fast, mobile-friendly website built for your trade.
+                Get found online, build customer trust, and grow your business with a fast, mobile-friendly website built for your business.
               </p>
 
-              {/* Hero Benefit Badges: Get Found · Get Calls · Get Enquiries */}
-              <div className="flex flex-col min-[420px]:flex-row flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 pt-1 max-w-full">
-                <span className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-xl bg-blue-500/25 border border-blue-400/50 text-blue-100 text-xs sm:text-sm font-extrabold shadow-xs w-full min-[420px]:w-auto text-center">
-                  <span>🔍 Get Found</span>
-                </span>
-                <span className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-xl bg-emerald-500/25 border border-emerald-400/50 text-emerald-100 text-xs sm:text-sm font-extrabold shadow-xs w-full min-[420px]:w-auto text-center">
-                  <span>📞 Get Calls</span>
-                </span>
-                <span className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-xl bg-amber-500/25 border border-amber-400/50 text-amber-100 text-xs sm:text-sm font-extrabold shadow-xs w-full min-[420px]:w-auto text-center">
-                  <span>💬 Get Enquiries</span>
-                </span>
-              </div>
+              {/* Core Brand Message */}
+              <p className="text-base sm:text-lg md:text-xl font-extrabold tracking-wide text-blue-200">
+                Get Found. <span className="text-blue-400">Get Leads.</span> Grow.
+              </p>
 
               {/* Conversion Buttons — Clean Vertical Stack on Mobile / Horizontal on Desktop */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5 pt-2 w-full max-w-full">
@@ -222,26 +214,6 @@ const Home = () => {
                   <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                   <span>Call {contactConfig.phoneDisplay}</span>
                 </a>
-              </div>
-
-              {/* Trust markers — High Visibility Crisp Text */}
-              <div className="pt-5 border-t border-slate-800/90 grid grid-cols-1 min-[380px]:grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-6 text-xs sm:text-sm text-white font-bold max-w-full">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span>Fast Loading Speed</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span>100% Mobile Ready</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span>Google Search Ready</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                  <span>Local Support</span>
-                </div>
               </div>
             </div>
 
