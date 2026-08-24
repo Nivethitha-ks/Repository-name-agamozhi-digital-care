@@ -246,11 +246,8 @@ const About = () => {
             {/* Location & Support Card */}
             <div className="lg:col-span-5">
               <div className="bg-gradient-to-br from-[#0B1F3A] to-[#07111F] text-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-800 shadow-xl space-y-6">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-extrabold text-2xl shadow-xs">
-                    A
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-xs font-bold border border-blue-400/30">
+                <div>
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-500/20 text-blue-200 text-xs font-bold border border-blue-400/30">
                     Pudukkottai Based
                   </span>
                 </div>

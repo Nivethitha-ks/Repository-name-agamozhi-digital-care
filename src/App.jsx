@@ -11,7 +11,6 @@ import Services from './pages/Services'
 import Packages from './pages/Packages'
 import Projects from './pages/Projects'
 import HowItWorks from './pages/HowItWorks'
-import Industries from './pages/Industries'
 import Contact from './pages/Contact'
 import Resources from './pages/Resources'
 import NotFound from './pages/NotFound'
@@ -38,7 +37,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/why-us" element={<Navigate to="/about" replace />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/industries" element={<Industries />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

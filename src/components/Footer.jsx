@@ -14,7 +14,6 @@ const Footer = () => {
     { label: 'Website Packages', to: '/packages' },
     { label: 'Featured Projects', to: '/projects' },
     { label: 'How It Works', to: '/how-it-works' },
-    { label: 'Industries', to: '/industries' },
     { label: 'Documents & Resources', to: '/resources' },
     { label: 'Contact Us', to: '/contact' },
   ]

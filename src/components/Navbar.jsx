@@ -13,7 +13,6 @@ const navLinks = [
   { label: 'Packages', to: '/packages' },
   { label: 'Projects', to: '/projects' },
   { label: 'How It Works', to: '/how-it-works' },
-  { label: 'Industries', to: '/industries' },
   { label: 'Resources', to: '/resources' },
   { label: 'Contact', to: '/contact' },
 ]
