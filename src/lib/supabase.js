@@ -4,10 +4,16 @@ import { CONTACT_CONFIG } from '../config/contact.js'
 import { isTodayInIST, getISTStartAndEndOfDay } from './dateUtils.js'
 
 const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL || 'https://placeholder-url.supabase.co'
-const supabaseAnonKey = import.meta.env?.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
+// Support both naming conventions: VITE_SUPABASE_PUBLISHABLE_KEY (Vercel/production)
+// and VITE_SUPABASE_ANON_KEY (legacy/local dev fallback)
+const supabaseAnonKey =
+  import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY ||
+  import.meta.env?.VITE_SUPABASE_ANON_KEY ||
+  'placeholder-key'
 
 export const isSupabaseConfigured = Boolean(
-  import.meta.env?.VITE_SUPABASE_URL && import.meta.env?.VITE_SUPABASE_ANON_KEY
+  import.meta.env?.VITE_SUPABASE_URL &&
+    (import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env?.VITE_SUPABASE_ANON_KEY)
 )
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
@@ -161,7 +167,11 @@ export const dbService = {
   // Submit new lead with rate limiting enforcement
   async createLead(leadData) {
     const notificationEmail = CONTACT_CONFIG.adminNotificationEmail || 'agamozhidigitalcare@gmail.com'
+    // business_type is no longer collected by the form; pass null so existing DB schemas
+    // that have made the column nullable continue to work. Run the migration SQL to make
+    // this column nullable if it is still NOT NULL in your Supabase project.
     const newLeadRecord = {
+      business_type: leadData.business_type || null,
       ...leadData,
       source: 'website',
       status: 'New',
@@ -185,14 +195,14 @@ export const dbService = {
             throw rateLimitErr
           }
           
-          // If remote schema does not have the new columns yet, fallback safely by appending them to message
+          // If remote schema does not have preferred_package yet (older deployment),
+          // retry with only the baseline columns that are guaranteed to exist.
           if (
             error.message?.includes('current_website') ||
             error.message?.includes('preferred_package') ||
             error.code === '42703' // undefined_column
           ) {
             const safeNotes = [
-              leadData.current_website ? `[Current Website: ${leadData.current_website}]` : '',
               leadData.preferred_package ? `[Preferred Package: ${leadData.preferred_package}]` : '',
               leadData.message || '',
             ]
@@ -203,7 +213,7 @@ export const dbService = {
               name: leadData.name,
               business_name: leadData.business_name || null,
               phone: leadData.phone,
-              business_type: leadData.business_type,
+              business_type: leadData.business_type || null,
               requirement: leadData.requirement,
               message: safeNotes || null,
               source: 'website',
