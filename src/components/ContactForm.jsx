@@ -160,33 +160,33 @@ const ContactForm = () => {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 md:p-10 shadow-lg shadow-slate-200/50"
+      className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 p-4 sm:p-8 md:p-10 shadow-lg shadow-slate-200/50 w-full min-w-0 max-w-full"
     >
-      <div className="mb-8 pb-6 border-b border-slate-100">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Quick Consultation</span>
+      <div className="mb-6 sm:mb-8 pb-5 sm:pb-6 border-b border-slate-100 min-w-0">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2 max-w-full">
+          <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+          <span className="break-words">Quick Consultation</span>
         </div>
-        <h3 className="font-extrabold text-2xl sm:text-3xl text-slate-950 tracking-tight mb-2">
+        <h3 className="font-extrabold text-xl sm:text-3xl text-slate-950 tracking-tight mb-2 break-words">
           Tell Us About Your Business
         </h3>
-        <p className="text-slate-800 text-base leading-relaxed font-medium">
+        <p className="text-slate-800 text-sm sm:text-base leading-relaxed font-medium break-words">
           Share your requirements below. We'll understand your goals and suggest the right digital solution for your business.
         </p>
       </div>
 
       {status === 'error' && (
-        <div className="flex items-center gap-3 p-4 mb-6 rounded-xl bg-red-50 text-red-700 text-sm border border-red-200">
+        <div className="flex items-center gap-3 p-4 mb-6 rounded-xl bg-red-50 text-red-700 text-sm border border-red-200 min-w-0">
           <AlertCircle className="w-5 h-5 shrink-0 text-red-600" />
-          <span>{errorMessage}</span>
+          <span className="break-words">{errorMessage}</span>
         </div>
       )}
 
-      <div className="space-y-6">
+      <div className="space-y-5 sm:space-y-6 min-w-0">
         {/* Row 1: Name & Business Name */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 min-w-0">
           {/* Full Name */}
-          <div>
+          <div className="min-w-0">
             <label htmlFor="name" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2">
               Full Name <span className="text-red-500">*</span>
             </label>
@@ -199,12 +199,12 @@ const ContactForm = () => {
               placeholder="e.g. Ramesh Kumar"
               className={inputStyles('name')}
             />
-            {errors.name && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600">{errors.name}</p>}
+            {errors.name && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600 break-words">{errors.name}</p>}
           </div>
 
           {/* Business Name */}
-          <div>
-            <label htmlFor="businessName" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex items-center justify-between">
+          <div className="min-w-0">
+            <label htmlFor="businessName" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex flex-wrap items-center justify-between gap-1">
               <span>Business / Shop Name</span>
               <span className="text-xs text-slate-500 font-semibold lowercase">(optional)</span>
             </label>
@@ -221,9 +221,9 @@ const ContactForm = () => {
         </div>
 
         {/* Row 2: Phone / WhatsApp & Website Requirement */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 min-w-0">
           {/* Phone / WhatsApp */}
-          <div>
+          <div className="min-w-0">
             <label htmlFor="phone" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2">
               Phone / WhatsApp <span className="text-red-500">*</span>
             </label>
@@ -236,11 +236,11 @@ const ContactForm = () => {
               placeholder="10-digit mobile number"
               className={inputStyles('phone')}
             />
-            {errors.phone && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600">{errors.phone}</p>}
+            {errors.phone && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600 break-words">{errors.phone}</p>}
           </div>
 
           {/* Website Requirement */}
-          <div>
+          <div className="min-w-0">
             <label htmlFor="requirement" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2">
               Website Requirement <span className="text-red-500">*</span>
             </label>
@@ -258,13 +258,13 @@ const ContactForm = () => {
                 </option>
               ))}
             </select>
-            {errors.requirement && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600">{errors.requirement}</p>}
+            {errors.requirement && <p className="mt-1.5 text-xs sm:text-sm font-semibold text-red-600 break-words">{errors.requirement}</p>}
           </div>
         </div>
 
         {/* Row 3: Preferred Package */}
-        <div>
-          <label htmlFor="preferredPackage" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex items-center justify-between">
+        <div className="min-w-0">
+          <label htmlFor="preferredPackage" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex flex-wrap items-center justify-between gap-1">
             <span>Preferred Package / Service</span>
             <span className="text-xs text-slate-500 font-semibold lowercase">(optional)</span>
           </label>
@@ -285,8 +285,8 @@ const ContactForm = () => {
         </div>
 
         {/* Short Message / Notes */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex items-center justify-between">
+        <div className="min-w-0">
+          <label htmlFor="message" className="block text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-2 flex flex-wrap items-center justify-between gap-1">
             <span>Short Message / Notes</span>
             <span className="text-xs text-slate-500 font-semibold lowercase">(optional)</span>
           </label>
@@ -305,7 +305,7 @@ const ContactForm = () => {
         <Button
           type="submit"
           size="lg"
-          className="w-full py-4 text-base font-extrabold shadow-md shadow-blue-500/20"
+          className="w-full py-3.5 sm:py-4 text-sm sm:text-base font-extrabold shadow-md shadow-blue-500/20"
           disabled={status === 'loading'}
         >
           {status === 'loading' ? (
@@ -316,7 +316,7 @@ const ContactForm = () => {
           ) : (
             <>
               <span>Get a Free Consultation</span>
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4 sm:w-5 sm:h-5" />
             </>
           )}
         </Button>
