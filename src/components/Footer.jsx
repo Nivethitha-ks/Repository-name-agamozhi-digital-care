@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Phone, MessageCircle, MapPin } from 'lucide-react'
+import { Phone, MessageCircle, MapPin, Mail } from 'lucide-react'
 import { useContactConfig } from '../config/contact'
 import { trackPhoneClick, trackWhatsAppClick } from '../lib/analytics'
 
@@ -13,7 +13,7 @@ const Footer = () => {
     { label: 'Services', to: '/services' },
     { label: 'Website Packages', to: '/packages' },
     { label: 'Featured Projects', to: '/projects' },
-    { label: 'How It Works', to: '/how-it-works' },
+    { label: 'Our Process', to: '/our-process' },
     { label: 'Documents & Resources', to: '/resources' },
     { label: 'Contact Us', to: '/contact' },
   ]
@@ -136,6 +136,21 @@ const Footer = () => {
                   <div>
                     <div className="text-[11px] text-slate-300">WhatsApp</div>
                     <div className="font-bold text-white">Chat with Team</div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href={contactConfig.emailMailto || `mailto:${contactConfig.email}`}
+                  className="flex items-center gap-3 text-slate-200 text-sm hover:text-white transition-colors group p-2 -ml-2 rounded-lg hover:bg-white/5"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[11px] text-slate-300">Email Us</div>
+                    <div className="font-bold text-white text-xs sm:text-sm truncate">{contactConfig.email}</div>
                   </div>
                 </a>
               </li>

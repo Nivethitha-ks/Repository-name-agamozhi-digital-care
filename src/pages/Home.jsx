@@ -5,6 +5,7 @@ import {
   Phone,
   MessageCircle,
   MapPin,
+  Mail,
   Sparkles,
   CheckCircle2,
   Cpu,
@@ -28,30 +29,30 @@ import { industries } from '../data/industries'
 import { useContactConfig } from '../config/contact'
 import { trackPageView, trackPhoneClick, trackWhatsAppClick, trackConsultationCTAClick } from '../lib/analytics'
 
-// 4-Step Process
+// 4-Step Process: Our Process
 const processSteps = [
   {
     step: '01',
     name: 'Discuss',
-    title: 'Understand Your Business',
+    title: 'Understand the Business & Requirement',
     description: 'We talk with you to understand your services, target customers, and what you want your website to achieve.',
   },
   {
     step: '02',
     name: 'Design',
-    title: 'Plan & Create Layout',
+    title: 'Create Website Experience & Visual Direction',
     description: 'We create a clean, easy-to-read website design with clear contact buttons and simple service descriptions.',
   },
   {
     step: '03',
     name: 'Develop',
-    title: 'Build & Connect',
+    title: 'Build & Integrate the Website',
     description: 'We build your mobile-friendly website with instant WhatsApp chat, call buttons, and contact forms.',
   },
   {
     step: '04',
     name: 'Launch',
-    title: 'Test & Make Live',
+    title: 'Test, Deploy & Make Live',
     description: 'We test your website on mobile phones, connect your domain name, and launch it live for your customers.',
   },
 ]
@@ -499,6 +500,13 @@ const Home = () => {
                     <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>Phone: {contactConfig.phoneDisplay}</span>
                   </div>
+                  <a
+                    href={contactConfig.emailMailto || `mailto:${contactConfig.email}`}
+                    className="flex items-center gap-3 text-white hover:text-blue-200 transition-colors font-semibold"
+                  >
+                    <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="truncate">Email: {contactConfig.email}</span>
+                  </a>
                   <div className="flex items-center gap-3 text-white font-semibold">
                     <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>WhatsApp: Available 7 days a week</span>
@@ -691,13 +699,13 @@ const Home = () => {
       </section>
 
       {/* =========================================================================
-          5. 4-STEP PROCESS — Desktop Horizontal / Mobile Vertical
+          5. OUR PROCESS — 4 Simple Steps
       ========================================================================== */}
       <section className="section-padding bg-slate-50 border-y border-slate-200/80" id="process">
         <div className="container-custom">
           <SectionHeading
-            eyebrow="4-Step Process"
-            title="How We Build Your Website"
+            eyebrow="Our Process"
+            title="Our Process: How We Build Your Website"
             subtitle="A simple, step-by-step process with clear milestones from start to live launch."
           />
 
@@ -987,9 +995,22 @@ const Home = () => {
                   <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs text-slate-600 font-bold">Direct Phone Call</div>
                     <div className="text-base font-extrabold text-slate-900">Call Now: {contactConfig.phoneDisplay}</div>
+                  </div>
+                </a>
+
+                <a
+                  href={contactConfig.emailMailto || `mailto:${contactConfig.email}`}
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-slate-300 bg-white hover:border-blue-400 hover:shadow-md transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-xs text-slate-600 font-bold">Email Us</div>
+                    <div className="text-base font-extrabold text-slate-900 truncate">{contactConfig.email}</div>
                   </div>
                 </a>
               </div>

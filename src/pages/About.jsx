@@ -6,6 +6,7 @@ import {
   MapPin,
   Phone,
   MessageCircle,
+  Mail,
   Layers,
   Cpu,
   Boxes,
@@ -275,6 +276,13 @@ const About = () => {
                     <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>Phone: {contactConfig.phoneDisplay}</span>
                   </div>
+                  <a
+                    href={contactConfig.emailMailto || `mailto:${contactConfig.email}`}
+                    className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group font-medium"
+                  >
+                    <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="group-hover:text-blue-300">Email: {contactConfig.email}</span>
+                  </a>
                   <div className="flex items-center gap-3 text-slate-200 font-medium">
                     <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span>WhatsApp: Available 7 days a week</span>

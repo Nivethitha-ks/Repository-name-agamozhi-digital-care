@@ -12,7 +12,7 @@ const navLinks = [
   { label: 'Services', to: '/services' },
   { label: 'Packages', to: '/packages' },
   { label: 'Projects', to: '/projects' },
-  { label: 'How It Works', to: '/how-it-works' },
+  { label: 'Our Process', to: '/our-process' },
   { label: 'Resources', to: '/resources' },
   { label: 'Contact', to: '/contact' },
 ]

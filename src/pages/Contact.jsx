@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Phone, MessageCircle, MapPin, Clock, Sparkles, Navigation, ExternalLink } from 'lucide-react'
+import { Phone, MessageCircle, MapPin, Clock, Sparkles, Navigation, ExternalLink, Mail } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import { useContactConfig } from '../config/contact'
 import { trackPageView, trackPhoneClick, trackWhatsAppClick } from '../lib/analytics'
@@ -50,7 +50,7 @@ const Contact = () => {
                   Serving shops, clinics, tuition centres, schools, restaurants, and service businesses in <strong>{contactConfig.serviceArea}</strong>.
                 </p>
 
-                {/* Primary Conversion Actions (WhatsApp & Call) */}
+                {/* Primary Conversion Actions (WhatsApp, Call & Email) */}
                 <div className="space-y-3.5 pt-2">
                   {/* WhatsApp Click-to-Chat */}
                   <a
@@ -81,6 +81,20 @@ const Contact = () => {
                     <div>
                       <div className="text-xs text-slate-700 font-bold uppercase tracking-wider">Direct Telephone</div>
                       <div className="font-extrabold text-lg sm:text-xl text-slate-950">Call Now: {contactConfig.phoneDisplay}</div>
+                    </div>
+                  </a>
+
+                  {/* Email Us with mailto: */}
+                  <a
+                    href={contactConfig.emailMailto || `mailto:${contactConfig.email}`}
+                    className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-slate-300 bg-white hover:border-blue-400 hover:bg-slate-50 transition-all group shadow-xs"
+                  >
+                    <div className="w-13 h-13 rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                      <Mail className="w-6 h-6" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs text-slate-700 font-bold uppercase tracking-wider">Email Us</div>
+                      <div className="font-extrabold text-base sm:text-lg text-slate-950 truncate">{contactConfig.email}</div>
                     </div>
                   </a>
 

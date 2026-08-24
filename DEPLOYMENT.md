@@ -96,7 +96,7 @@ Set these variables in your hosting provider's dashboard (e.g. Vercel Project Se
 ## 7. Client Handover Checklist
 
 ### ✅ Deliverables Verified
-- [x] **Public Website**: All public pages (`/`, `/about`, `/services`, `/packages`, `/projects`, `/why-us`, `/how-it-works`, `/resources`, `/contact`) + 404 Error page.
+- [x] **Public Website**: All public pages (`/`, `/about`, `/services`, `/packages`, `/projects`, `/why-us`, `/our-process`, `/resources`, `/contact`) + 404 Error page.
 - [x] **Brand & Contact Consistency**: Verified official phone, WhatsApp pre-filled link, Google Maps embed, and enquiry notification routing.
 - [x] **Real Client Showcase**: Sri Bhavani Automation (`https://www.sbautomation.in/`).
 - [x] **Enquiry Capture Flow**: Form validation, duplicate click prevention, database persistence, immediate feedback.
