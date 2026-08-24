@@ -160,11 +160,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 sm:mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
-          <p>
+        <div className="mt-12 sm:mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-center sm:text-left">
+          <p className="text-slate-300 font-medium leading-relaxed">
             © {currentYear} {contactConfig.companyName}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-slate-400">
             <Link to="/contact" className="hover:text-slate-200 transition-colors">
               Free Consultation
             </Link>
